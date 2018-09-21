@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans');
+body,html {
+	padding:0px;
+	margin:0px;
+	font-family: 'Droid Sans'; 
+	overflow:hidden;
+}
+a:link,a:visited,a:active,a:hover {
+	text-decoration:none; 
+	width:2em;
+	height:1em;
+	color:blue;
+}
+#errorSelector { text-align:center; }
+#problemDesc { 
+
+	padding:5px;
+	display:none;
+}
+#container {
+	 
+	margin:0 auto;
+	padding:4px;
+}
+.ledBubble {
+	width:21px;
+	height:21px;
+	display:inline-block;
+	font-family:'Times New Roman';
+	background:url('img/led_white.png');
+	color:black;
+}
+.menu a:link,a:visited { color:white; }
+.menu { 
+	padding:8px;
+	display:inline-block;
+	visibility:hidden;
+	color:white;
+}
+ul {
+	bullet-style:none;
+	list-style:none;
+	padding:0px;
+	margin:0px;
+	list-style:none;
+}
+.modelSelect { 
+	color:black;
+	text-align:center;
+	padding:24px;
+	margin:0px;
+	
+}
+#topBar {
+	text-align:left;
+	border-bottom:1px solid gray;
+	background:rgb(0, 125, 184);
+	color:white;
+}
+.modelSelect:hover { background:ghostwhite; }
+.ticon {
+	margin-top:-1px;
+	vertical-align:middle;
+	height:1em;
+	width:1em;
+}
+.content {
+	width: 90%;
+	margin:0 auto;
+	padding:18px;
+	text-decoration:italic;
+	background:white;
+	text-align:left;
+}
+#modelId{
+	display:inline-block;
+	text-align:right;
+}

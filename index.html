@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<title>Optiplex Diagnostic Indicator Reference</title>
+	
+		<meta charset = 'UTF-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel = 'stylesheet' href = 'global.css'>
+		
+		<script src = 'codes/codes_0912.js'></script>
+		<script src = 'codes/codes_0509.js'></script>
+		<script src = 'codes/codes_12xx.js'></script>
+		<script src = 'codes/codes_beep.js'></script>
+
+		<script src = 'pageHandling.js'></script>
+		
+	</head>
+	<body onload = 'evalError_0509();'>
+	
+		
+		
+	
+		<div id = 'topBar'>
+			<a href = '' id = 'backButton' class = 'menu'><img class = 'ticon' src = 'img/iconmonstr-arrow-64.png'></a>
+			<span id = 'modelId'>OptiPlex Diagnostic Indicator Reference</span>
+			
+		</div> 
+		<br/> 
+		 
+		<div id = 'helpText' class = 'content'> 
+			Dell OptiPlex computers come with a variety of error diagnostic tools including numbered LED lights and beep codes. Select your OptiPlex model and enter the error you see on your computer. 
+		</div>
+		
+		<div id = 'modelSelect'>
+		 
+			<a href = '#' onclick = 'changeModel(0)'><div class = 'modelSelect'>Dell OptiPlex 2005-2009</div></a>
+			<a href = '#' onclick = 'changeModel(1)'><div class = 'modelSelect'>Dell OptiPlex 2009-2012</div></a>
+			<a href = '#' onclick = 'changeModel(2)'><div class = 'modelSelect'>Dell OptiPlex 2012-Present</div></a>
+			<a href = '#' onclick = 'changeModel(3)'><div class = 'modelSelect'>Beep Codes</div></a>
+		
+		</div>
+		
+		<div id = 'errorSelector'> 
+		
+		
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<!-- 2005 to 2009 LEDs -->
+			<div id = 'gen_0509' style = 'display:none;'>
+				<a href = '#' class = 'led' onclick = 'evalError_0509(0);'><div id = 'led1' class = 'ledBubble'>1</div></a> 
+				<a href = '#' class = 'led' onclick = 'evalError_0509(1);'><div id = 'led2' class = 'ledBubble'>2</div></a> 
+				<a href = '#' class = 'led' onclick = 'evalError_0509(2);'><div id = 'led3' class = 'ledBubble'>3</div></a> 
+				<a href = '#' class = 'led' onclick = 'evalError_0509(3);'><div id = 'led4' class = 'ledBubble'>4</div></a>  
+			</div> 
+			
+			
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<!-- 2009 to 2012 LEDs -->
+			<div id = 'gen_0912' style = 'display:none;'>
+				<a href = '#' class = 'led' onclick = 'evalError(0);'><div id = 'led1b' class = 'ledBubble'>1</div></a> 
+				<a href = '#' class = 'led' onclick = 'evalError(1);'><div id = 'led2b' class = 'ledBubble'>2</div></a> 
+				<a href = '#' class = 'led' onclick = 'evalError(2);'><div id = 'led3b' class = 'ledBubble'>3</div></a> 
+				<a href = '#' class = 'led' onclick = 'evalError(3);'><div id = 'led4b' class = 'ledBubble'>4</div></a> 
+				<img id = 'powerButton' onclick = 'togglePowerButton();' src = 'img/white.png' style = 'vertical-align:middle;'>
+			</div>
+			
+			
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<!-- 2012 to present LEDs -->
+			<div id = 'gen_12xx' style = 'display:none;'>
+				Light Blink Pattern:<br/>
+				<select style = '' id = 'blink_one' onchange = 'evalError_12xx();'>
+					<option value = '2'>2</option>
+					<option value = '3'>3</option>
+				</select> 
+				blinks, then pause, then 
+				<select style = '' id = 'blink_two' onchange = 'evalError_12xx();'>
+					<option value = '1'>1</option>
+					<option value = '2'>2</option>
+					<option value = '3'>3</option>
+					<option value = '4'>4</option>
+					<option value = '5'>5</option>
+					<option value = '6'>6</option>
+					<option value = '7'>7</option> 
+				</select> 
+				blinks.
+			</div>
+			
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<!-- Beep codes -->
+			<div id = 'beep_codes' style = 'display:none;padding:12px;'>
+				
+				Beep Pattern:<br/>
+				<select style = '' id = 'beep_one' onchange = 'evalError_beep();'>
+					<option value = '1'>1</option>
+					<option value = '2'>2</option>
+					<option value = '3'>3</option>
+					<option value = '4'>4</option>
+				</select> 
+				 - 
+				<select style = '' id = 'beep_two' onchange = 'evalError_beep();'>
+					<option value = '1'>1</option>
+					<option value = '2'>2</option>
+					<option value = '3'>3</option>
+					<option value = '4'>4</option> 
+				</select> 
+				 - 
+				<select style = '' id = 'beep_three' onchange = 'evalError_beep();'>
+					<option value = '1'>1</option>
+					<option value = '2'>2</option>
+					<option value = '3'>3</option>
+					<option value = '4'>4</option> 
+				</select> 
+			</div>
+			
+		</div>
+		
+		<div id = 'problemDesc' class = 'content'>
+		
+		</div>
+	
+		
+		<script>var pages = [document.getElementById('gen_12xx'),document.getElementById('gen_0509'),document.getElementById('gen_0912'),document.getElementById('beep_codes')];</script>
+	</body>
+</html>
