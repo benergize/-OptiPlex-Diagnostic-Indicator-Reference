@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue-router@3.4.9/dist/vue-router.js"></script>
+
+		<script src = 'views/home.js'></script>
+		<script src = 'views/gen5.js'></script>
+		<script src = 'views/gen9.js'></script>
+		<script src = 'views/gen12.js'></script>
+		<script src = 'views/beep.js'></script>
+
+
+		<script src = 'codes/codes_0912.js'></script>
+		<script src = 'codes/codes_0509.js'></script>
+		<script src = 'codes/codes_12xx.js'></script>
+		<script src = 'codes/codes_beep.js'></script>
+
+		<style>
+			html,body{margin:0px;padding:0px; font-family: Arial, Sans-Serif;}
+			body {  }
+			nav {
+				width:100%;
+				background:rgb(0, 125, 184);
+				color:white;
+				padding:12px;
+			}
+			p { padding:12px; }
+			.pages {
+				padding:16px 20px;
+				display:block;
+			}
+			.pages:hover {
+			
+				background:#fafafa;
+			}
+			a:link,a:hover,a:visited,a:active,a:focus{ color:black; text-decoration:none; }
+			nav a:link,nav a:active,nav a:visited,nav a:focus { color:white; }
+			.content {
+				padding:12px;
+			}
+			
+			.controls { text-align:center; margin-bottom:1rem;} 
+			.controls button {
+				width: 21px;
+				height: 21px;
+				display: inline-block;
+				font-family: 'Times New Roman';
+				background: url(img/led_white.png);
+				color: black;
+				border:0px;
+				background-image:url('img/led_white.png');
+				outline:0px;
+				margin:.5rem;
+			}
+			.controls button:focus { outline:0px; } 
+			
+		</style>
+	</head>
+	<body>
+		<div id = 'app'> 
+			<nav><router-link to = '/' v-html="topButton"></router-link></nav>
+			<router-view></router-view> 
+		</div>
+
+		<script>
+
+			const NotFound = { template: '<p>Page not found</p>' }    
+		 
+			
+			const router = new VueRouter({
+			  routes:[
+				  {path: '/', component: Home, name:"Home"},
+				  {path: '/2005', component: Gen5, name:"Models 2005-2009"},
+				  {path: '/2009', component: Gen9, name:"Models 2009-2012"},
+				  {path: '/2012', component: Gen12, name:"Models 2012-Present"},
+				  {path: '/beep', component: Beep, name:"Beep Diagnostic Cdes"}
+				]
+			})
+			
+			var app = new Vue({
+				el:"#app",
+				data() { 
+					return {
+						
+					}
+				}, 
+				computed: {
+					topButton: function() {
+						return this.$route.name !== "Home" ? "⮜ " + this.$route.name : "Optiplex Reference"
+					}
+				},
+				router
+				
+			});
+		</script>
+	</body>
+</html>
